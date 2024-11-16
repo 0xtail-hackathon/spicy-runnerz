@@ -28,8 +28,12 @@ const TransactionHistory: React.FC<TransactionHistoryProps> = ({ address }) => {
                 }
                 const data: Transaction[] = await response.json();
                 setTransactions(data);
-            } catch (error: never) {
-                setError(error.message || "An unexpected error occurred.");
+            } catch (error: unknown) {
+                if (error instanceof Error) {
+                    setError(error.message);
+                } else {
+                    setError("An unexpected error occurred.");
+                }
             } finally {
                 setLoading(false);
             }
