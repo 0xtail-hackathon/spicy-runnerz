@@ -14,7 +14,7 @@ const HomeScreen: React.FC = () => {
   const recommendations: Recommendation[] = dummyData;
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100 pt-10">
+    <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100">
       <Header lines={["RUN", "NEAR YOU"]} />
 
       <main className="mt-10 w-11/12 md:w-8/12 lg:w-1/2">

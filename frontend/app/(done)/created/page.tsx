@@ -58,7 +58,7 @@ const CompletedRunScreen: React.FC = () => {
       </div>
       <button
         onClick={handleWellDoneClick}
-        className="bg-primary-1000 text-white w-full max-w-lg py-4 rounded-full font-bold"
+        className="bg-primary-1000 text-white w-full max-w-lg py-4 rounded-full font-bold text-xl"
       >
         Well done
       </button>

@@ -12,7 +12,7 @@ const RunScreen = () => {
       <ClientMap />
       {from === "join" && status === "end" && (
         <Link
-          href="/rewards"
+          href="/share"
           passHref
           className="fixed top-32 bg-gray-800 text-white py-4 px-6 rounded-full shadow-md z-10 flex items-center justify-between w-10/12 max-w-lg"
         >

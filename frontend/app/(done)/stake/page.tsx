@@ -13,9 +13,9 @@ const StakeRunzScreen: React.FC = () => {
   const availableRunz = 4329.34;
   const gasFees = 0.003;
 
-  const handleWellDoneClick = async () => {
+  const handleNextClick = async () => {
     // TODO: staking
-    router.push("/completed");
+    router.push("/created");
   };
 
   return (
@@ -54,10 +54,10 @@ const StakeRunzScreen: React.FC = () => {
           *RUNNERZ pays the gas fee for you!
         </p>
         <button
-          onClick={handleWellDoneClick}
-          className="bg-primary-1000 text-white w-full py-4 rounded-full font-bold mb-4"
+          onClick={handleNextClick}
+          className="bg-primary-1000 text-white w-full py-4 rounded-full font-bold mb-4 text-xl"
         >
-          Well done
+          Next
         </button>
       </div>
     </div>

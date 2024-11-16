@@ -62,7 +62,7 @@ const RunCreateScreen: React.FC = () => {
       <div className="w-full flex flex-col items-center gap-3">
         <button
           type="submit"
-          className="bg-primary-1000 text-white px-6 py-3 rounded-full font-bold w-full"
+          className="bg-primary-1000 text-white px-6 py-3 rounded-full font-bold w-full text-xl"
         >
           Let’s go!
         </button>
