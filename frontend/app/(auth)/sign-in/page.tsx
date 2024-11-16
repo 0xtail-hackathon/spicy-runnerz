@@ -15,15 +15,15 @@ export default function Home() {
             <header
                 className={`mt-10 ${jockeyOne.className} align-middle text-center text-6xl font-bold text-gray-800`}
             >
-                <h1 className="text-6xl font-extrabold mb-8">Hello</h1>
-                <h2 className="text-6xl font-extrabold mb-8">RUNNERS!</h2>
+                <h1 className="text-6xl font-extrabold mb-8">Spicy</h1>
+                <h2 className="text-6xl font-extrabold mb-8">RUNNERZ!</h2>
             </header>
             <div
                 className="w-24 h-24 rounded-full flex items-center justify-center mb-8"
-                style={{ backgroundColor: '#9feb3d' }}
+                style={{backgroundColor: '#9feb3d'}}
             >
                 <img src="runner.png" alt="Runner" className="ml-10"
-                     style={{ width: "200px", height: "100px", transform: "rotate(-5deg)" }} />
+                     style={{width: "200px", height: "100px", transform: "rotate(-5deg)"}}/>
             </div>
 
             <div className="w-full max-w-sm space-y-4">
@@ -33,7 +33,7 @@ export default function Home() {
                             <img
                                 src="/dynamic.png"
                                 alt="Dynamic Logo"
-                                className="size-0"
+                                className="w-6 h-6"
                             />
                             <span>Sign in with Dynamic</span>
                         </div>
@@ -43,9 +43,9 @@ export default function Home() {
                 />
 
                 <div className="flex items-center justify-center w-full text-gray-500 my-4">
-                    <hr className="w-1/2" />
+                    <hr className="w-1/2"/>
                     <span className="px-2">or</span>
-                    <hr className="w-1/2" />
+                    <hr className="w-1/2"/>
                 </div>
 
                 <div className="w-full max-w-sm space-y-4">
@@ -70,7 +70,7 @@ export default function Home() {
 
                     <div className="flex items-center justify-between text-sm">
                         <label className="flex items-center space-x-2">
-                            <input type="checkbox" className="h-4 w-4 text-blue-600" />
+                            <input type="checkbox" className="h-4 w-4 text-blue-600"/>
                             <span>Remember me</span>
                         </label>
                         <a href="#" className="text-blue-500">Forgot password?</a>
@@ -85,7 +85,31 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <footer className="flex items-center justify-center gap-4 mt-10 border-t pt-4 w-full max-w-sm">
+                <div className="flex items-center gap-2 border rounded-lg px-4 py-2">
+                    <img
+                        src="/chiliz.png"
+                        alt="Chiliz Logo"
+                        className="w-6 h-6"
+                    />
+                    <div className="flex flex-col items-start">
+                        <span className="text-xs font-light leading-none text-gray-600">Powered by</span>
+                        <span className="text-lg font-bold text-black">chiliz</span>
+                    </div>
+                </div>
 
+                <div className="flex items-center gap-2 border rounded-lg px-4 py-2">
+                    <img
+                        src="/dynamic.png"
+                        alt="Dynamic Logo"
+                        className="w-6 h-6"
+                    />
+                    <div className="flex flex-col items-start">
+                        <span className="text-xs font-light leading-none text-gray-600">Powered by</span>
+                        <span className="text-lg font-bold text-black">dynamic</span>
+                    </div>
+                </div>
+            </footer>
         </div>
     );
 }
