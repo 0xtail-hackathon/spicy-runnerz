@@ -10,7 +10,7 @@ const CompletedRunScreen: React.FC = () => {
   const runImageUrl = "/images/map-example.svg";
   const accountProfileImageUrl = "icons/account-profile.svg";
   const copyImageUrl = "icons/copy.svg";
-  const walletAddress = "0x1234567890abcdef1234567890abcdef12345678";
+  const walletAddress = "0x2185970Fe5C8756190fA91F04a999083361667Dd";
 
   const formatWalletAddress = (address: string) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
