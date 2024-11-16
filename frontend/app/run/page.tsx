@@ -11,7 +11,7 @@ const RunScreen = () => {
     <div className="relative w-full min-h-full flex flex-col items-center justify-start">
       <ClientMap />
       {from === "join" && status === "end" && (
-        <GetRunzButton top="32" link="share" />
+        <GetRunzButton className="top-40" link="share" />
       )}
       <ControlBox status={status} runningTime="00:00" />
     </div>

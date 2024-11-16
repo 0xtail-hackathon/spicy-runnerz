@@ -2,19 +2,19 @@ import Link from "next/link";
 import React from "react";
 
 interface GetRunzButtonProps {
-  top: string; // Allow custom top position
+  className?: string; // Allow any className to be passed
   link: string;
 }
 
 const GetRunzButton: React.FC<GetRunzButtonProps> = ({
-  top = "32",
-  link = "/",
+  className = "",
+  link,
 }) => {
   return (
     <Link
       href={link}
       passHref
-      className={`fixed top-${top} bg-gray-800 text-white py-4 px-6 rounded-full shadow-md z-10 flex items-center justify-between w-10/12 max-w-lg`}
+      className={`fixed bg-gray-800 text-white py-4 px-6 rounded-full shadow-md z-40 flex items-center justify-between w-10/12 max-w-lg ${className}`}
     >
       Get your RUNZ 🎉
       <span className="ml-auto">
