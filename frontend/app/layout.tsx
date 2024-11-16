@@ -1,20 +1,19 @@
 "use client";
 
+import React from "react";
 import { useRouter } from "next/navigation";
 import {
     DynamicContextProvider,
     EthereumWalletConnectors,
 } from "../lib/dynamic";
+import { SessionProvider } from "./context/SessionContext"; // SessionProvider 추가
 import "./globals.css";
 import { inter } from "./fonts";
-import React from "react";
 
 export default function RootLayout({
                                        children,
                                    }: Readonly<{ children: React.ReactNode }>) {
     const router = useRouter();
-
-    console.log("Environment Key:", process.env.NEXT_PUBLIC_DYNAMIC_KEY); // 디버깅
 
     return (
         <html lang="en">
@@ -32,15 +31,18 @@ export default function RootLayout({
                     },
                     onAuthSuccess: () => {
                         console.log("Authentication Successful");
-                        router.push("/");
+                        router.push("/run"); // 로그인 성공 시 /run으로 이동
                     },
                     onLogout: () => {
                         console.log("Logged Out");
+                        router.push("/sign-in"); // 로그아웃 시 /sign-in으로 이동
                     },
                 },
             }}
         >
-            {children}
+            <SessionProvider>
+                {children}
+            </SessionProvider>
         </DynamicContextProvider>
         </body>
         </html>

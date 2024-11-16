@@ -38,9 +38,9 @@ export default function Home() {
                 {/* Login/Logout Section */}
                 <div className="w-full max-w-sm space-y-4">
                     <DynamicEmbeddedWidget/>
-                    {isLoggedIn && (
-                        <p className="text-center text-green-600">You are logged in!</p>
-                    )}
+                    {/*{isLoggedIn && (*/}
+                    {/*    <p className="text-center text-green-600">You are logged in!</p>*/}
+                    {/*)}*/}
                 </div>
             </main>
 
