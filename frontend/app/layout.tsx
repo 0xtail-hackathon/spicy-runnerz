@@ -31,7 +31,7 @@ export default function RootLayout({
                     },
                     onAuthSuccess: () => {
                         console.log("Authentication Successful");
-                        router.push("/run"); // 로그인 성공 시 /run으로 이동
+                        router.push("/"); // 로그인 성공 시 /run으로 이동
                     },
                     onLogout: () => {
                         console.log("Logged Out");
