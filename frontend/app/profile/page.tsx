@@ -3,10 +3,11 @@
 import React, { useState } from "react";
 import WalletDashboard from "./components/WalletDashboard";
 import ERC20Balance from "./components/ERC20Balance";
-import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
+
+// import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 
 const WalletPage: React.FC = () => {
-    const { user } = useDynamicContext();
+    // const { user } = useDynamicContext();
     const [balance, setBalance] = useState<string>("0"); // balance 상태 추가
 
     const handleBalanceUpdate = (newBalance: string) => {
@@ -15,11 +16,8 @@ const WalletPage: React.FC = () => {
 
     return (
         <div>
-            {/* ERC20Balance 컴포넌트 */}
-            <ERC20Balance onBalanceUpdate={handleBalanceUpdate} />
-
-            {/* WalletDashboard에 balance 전달 */}
-            <WalletDashboard balance={balance} />
+            <ERC20Balance onBalanceUpdate={handleBalanceUpdate}/>
+            <WalletDashboard balance={balance}/>
         </div>
     );
 };
