@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import { jockeyOne } from "@/app/fonts";
-import { useIsLoggedIn } from "@dynamic-labs/sdk-react-core";
+import {useIsLoggedIn, DynamicEmbeddedWidget} from "@dynamic-labs/sdk-react-core";
 
 export default function Home() {
-    const isLoggedIn = useIsLoggedIn();
+    const isLoggedIn = useIsLoggedIn(); // 로그인 상태 확인
 
     return (
         <div className="flex flex-col min-h-screen bg-gray-50 p-4">
@@ -21,25 +21,25 @@ export default function Home() {
                 {/* Runner Image */}
                 <div
                     className="w-24 h-24 rounded-full flex items-center justify-center mb-8"
-                    style={{backgroundColor: '#9feb3d'}}
+                    style={{ backgroundColor: "#9feb3d" }}
                 >
-                    <img src="runner.png" alt="Runner" className="ml-10"
-                         style={{width: "200px", height: "100px", transform: "rotate(-5deg)"}}/>
+                    <img
+                        src="runner.png"
+                        alt="Runner"
+                        className="ml-10"
+                        style={{
+                            width: "200px",
+                            height: "100px",
+                            transform: "rotate(-5deg)",
+                        }}
+                    />
                 </div>
 
-                {/* Login Button */}
+                {/* Login/Logout Section */}
                 <div className="w-full max-w-sm space-y-4">
-                    {isLoggedIn ? (
-                        <div className="text-center text-green-600 font-semibold">
-                            You are logged in!
-                        </div>
-                    ) : (
-                        <button
-                            className="w-full bg-gray-200 text-black rounded-lg py-3 flex items-center justify-center gap-2 shadow-md"
-                        >
-                            <img src="/dynamic.png" alt="Dynamic Logo" className="w-5 h-5"/>
-                            <span>Sign in with dynamic.xyz</span>
-                        </button>
+                    <DynamicEmbeddedWidget/>
+                    {isLoggedIn && (
+                        <p className="text-center text-green-600">You are logged in!</p>
                     )}
                 </div>
             </main>
