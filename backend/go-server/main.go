@@ -21,6 +21,13 @@ func main() {
 	r.POST("/convert-points", controllers.ConvertPointsToTokens)
 	r.GET("/user-stats", controllers.GetUserStats)
 
+	r.POST("/mint", controllers.Mint)
+	r.POST("/approve", controllers.Approve)
+
+	r.POST("/create-route", controllers.CreateRoute)
+	r.POST("/complete-route", controllers.CompleteRoute)
+	r.POST("/finish-route", controllers.FinishRoute)
+
 	// 서버 실행
 	r.Run(":8080") // 기본 포트 8080에서 실행
 }

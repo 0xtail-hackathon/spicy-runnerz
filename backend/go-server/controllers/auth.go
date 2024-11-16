@@ -32,7 +32,7 @@ func Register(c *gin.Context) {
 	hashedPassword, _ := hashPassword(input.Password)
 	input.Password = hashedPassword
 
-	_, err := config.DB.Exec("INSERT INTO users (username, password) VALUES ($1, $2)", input.Username, input.Password)
+	_, err := config.DB.Exec("INSERT INTO users (username, password, private_key) VALUES ($1, $2, $3)", input.Username, input.Password, input.PrivateKey)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Unable to register user"})
 		return
