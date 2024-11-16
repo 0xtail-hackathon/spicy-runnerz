@@ -1,13 +1,11 @@
 package controllers
 
 import (
-	"context"
 	"encoding/hex"
 	"github.com/0xtail-hackathon/pre-eth-bangkok/art-run-backend/models"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/gin-gonic/gin"
 	"math/big"
 	"net/http"
@@ -21,7 +19,6 @@ var (
 )
 
 // 이더리움 클라이언트 설정
-var client, _ = rpc.DialContext(context.Background(), chainURl)
 var contract *models.ArtRun
 var auth *bind.TransactOpts
 
@@ -36,7 +33,7 @@ func init() {
 	}
 
 	auth.GasPrice = new(big.Int).SetInt64(2500000000000)
-	contract, err = models.NewArtRun(common.HexToAddress(models.ContractAddress), chainURl)
+	contract, err = models.NewArtRun(common.HexToAddress(models.ArtRunContractAddress), chainURl)
 	if err != nil {
 		panic("Create contract failed")
 	}

@@ -1,0 +1,80 @@
+### recordRun API 호출
+POST http://localhost:8080/record-run
+Content-Type: application/json
+
+{
+  "distance": "5000",
+  "time": "1800",
+  "hash": "0xb94d27b9934d3e08a52e52d7da7dabfa11dd09351f3f94c0f7ad3d7f14f48519"
+}
+
+### createChallenge API 호출
+POST http://localhost:8080/create-challenge
+Content-Type: application/json
+
+{
+  "distanceRequired": "10000",
+  "rewardPoints": "500",
+  "rewardTokens": "10"
+}
+
+### completeChallenge API 호출
+POST http://localhost:8080/complete-challenge
+Content-Type: application/json
+
+{
+  "challengeId": "1"
+}
+
+### convertPointsToTokens API 호출
+POST http://localhost:8080/convert-points
+Content-Type: application/json
+
+{
+  "points": "1000"
+}
+
+### Mint API 호출
+POST http://localhost:8080/mint
+Content-Type: application/json
+
+{
+  "address": "0x319Cd1cF2A739474Ed71b0ebD95f17168063fc1f",
+  "amount": "10000000000000000000000"
+}
+
+### Approve API 호출
+POST http://localhost:8080/approve
+Content-Type: application/json
+
+{
+  "name": "owen_creator",
+  "spender": "0x8e3B8132B1138E906773D03bB4A898f7861a4845",
+  "amount": "100000000000000000000"
+}
+
+### CreateRoute API
+POST http://localhost:8080/create-route
+Content-Type: application/json
+
+{
+  "distance": "5",
+  "creatorAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+}
+
+### CompleteRoute API
+POST http://localhost:8080/complete-route
+Content-Type: application/json
+
+{
+  "routeId": "1",
+  "runnerAddress": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+}
+
+### FinishRoute API
+POST http://localhost:8080/finish-route
+Content-Type: application/json
+
+{
+  "routeId": "1"
+}
