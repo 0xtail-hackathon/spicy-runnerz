@@ -9,7 +9,8 @@ export default function CreateRunLayout({
 }>) {
   return (
     <div className="flex flex-col items-center justify-between min-h-screen bg-gray-100">
-      <Header lines={["Want to", "create a", "new Run"]} />
+      <div className="h-20" />
+      <Header lines={["Want to", "Create", "New Run"]} />
       <div className="flex-grow w-full flex items-center justify-center">
         {children}
       </div>

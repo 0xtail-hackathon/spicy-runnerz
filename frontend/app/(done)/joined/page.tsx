@@ -11,6 +11,7 @@ const JoinedScreen: React.FC = () => {
   // Placeholder data, to be replaced with actual data from the server
   const accountProfileImageUrl = "icons/account-profile.svg";
   const tokenIconUrl = "/icons/token-color.svg";
+  const runnerImageUrl = "/images/runner.svg";
   const copyImageUrl = "icons/copy.svg";
   const walletAddress = "0x1234567890abcdef1234567890abcdef12345678";
   const formatWalletAddress = (address: string) => {
@@ -31,9 +32,7 @@ const JoinedScreen: React.FC = () => {
       <div
         className={`${jockeyOne.className} flex flex-col items-center mb-10`}
       >
-        <span role="img" aria-label="Running Emoji" className="text-6xl mb-4">
-          🏃‍♂️
-        </span>
+        <Image src={runnerImageUrl} alt="Token Icon" width={80} height={80} />
         <div className="text-6xl font-medium text-gray-800 text-center">
           <p>You got </p>
           <p>$RUNZ</p>

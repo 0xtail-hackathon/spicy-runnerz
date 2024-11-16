@@ -2,8 +2,12 @@ import React from "react";
 import Footer from "@/app/components/Footer";
 import dummyData from "@/data/recommendations.json";
 import Header from "./components/Header";
+import GetRunzButton from "./components/GetRunzButton";
+import Image from "next/image";
+import Link from "next/link";
 
 interface Recommendation {
+  id: string;
   name: string;
   calories: number;
   speed: number;
@@ -12,37 +16,47 @@ interface Recommendation {
 
 const HomeScreen: React.FC = () => {
   const recommendations: Recommendation[] = dummyData;
+  const joined: boolean = true;
 
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100">
       <Header lines={["RUN", "NEAR YOU"]} />
+      {joined && <GetRunzButton top="10" link="/redeemed" />}
 
       <main className="mt-10 w-11/12 md:w-8/12 lg:w-1/2">
         <div className="w-full bg-white shadow-md rounded-lg p-4 border">
           <div className="space-y-4">
             {recommendations.map((recommendation, index) => (
-              <div key={index} className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <img
-                    src={recommendation.image}
-                    alt="map"
-                    className="w-70 h-70 mr-4"
-                  />
-                  <div className="text-gray-500">
-                    <p className="text-xs">Recommended</p>
-                    <p className="text-gray-800 text-base font-semibold">
-                      {recommendation.name}
-                    </p>
-                    <p className="text-xs">
-                      {recommendation.calories} kcal • {recommendation.speed}{" "}
-                      km/hr
-                    </p>
+              <Link
+                key={index}
+                href={`/run/${encodeURIComponent(recommendation.name)}`}
+                passHref
+              >
+                <div className="flex items-center justify-between cursor-pointer hover:bg-gray-50 p-2 rounded-md">
+                  <div className="flex items-center">
+                    <Image
+                      src={recommendation.image}
+                      alt={recommendation.name}
+                      width={55}
+                      height={55}
+                      className="mr-4"
+                    />
+                    <div className="text-gray-500">
+                      <p className="text-xs">Recommended</p>
+                      <p className="text-gray-800 text-base font-semibold">
+                        {recommendation.name}
+                      </p>
+                      <p className="text-xs">
+                        {recommendation.calories} kcal • {recommendation.speed}{" "}
+                        km/hr
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <button className="text-gray-600">&gt;</button>
                   </div>
                 </div>
-                <div>
-                  <button className="text-gray-600">&gt;</button>
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
