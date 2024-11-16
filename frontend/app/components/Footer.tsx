@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const menuItems = [
   { href: "/", src: "/icons/menu-1.svg", alt: "Home" },
-  { href: "/sign-in", src: "/icons/menu-2.svg", alt: "Search" },
-  { href: "/run", src: "/icons/menu-3.svg", alt: "Chart" },
+  { href: "/create", src: "/icons/menu-2.svg", alt: "Create" },
+  { href: "/sign-in", src: "/icons/menu-3.svg", alt: "Shop" },
   { href: "/run", src: "/icons/menu-4.svg", alt: "Profile" },
 ];
 

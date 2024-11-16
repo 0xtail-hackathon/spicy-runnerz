@@ -10,7 +10,7 @@ const Loading = ({
   height: number;
 }) => {
   return (
-    <div className="flex items-center justify-center w-full">
+    <div className="flex items-center justify-center w-full h-full">
       <div className="animate-bounce">
         <Image src={logo} alt="Logo" width={width} height={height} />
       </div>

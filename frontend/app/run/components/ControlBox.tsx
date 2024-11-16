@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { jockeyOne } from "@/app/fonts";
+import { jockeyOne, poppins } from "@/app/fonts";
 
 interface ControlBoxProps {
   status: "ready" | "running" | "pause" | "end";
@@ -31,10 +31,10 @@ const ControlBox: React.FC<ControlBoxProps> = ({ status, runningTime }) => {
       >
         {buttonText}
       </h2>
-      <div className="w-full flex justify-around">
+      <div className={`${poppins.className} w-full flex justify-around`}>
         <div className="text-center basis-1/3 border-r">
           <p className="text-xs font-medium text-gray-500">Avr Pace</p>
-          <p className="text-2xl font-bold text-gray-900">0</p>
+          <p className="text-2xl font-bold text-gray-900">0'00"</p>
         </div>
         <div className="text-center basis-1/3 border-r">
           <p className="text-xs font-medium text-gray-500">Remaining</p>
