@@ -1,18 +1,21 @@
 [
   {
+    "id": "0",
     "name": "ETHGlobal Bangkok",
     "calories": 701,
     "speed": 11.2,
     "image": "/images/map-1.svg"
   },
   {
+    "id": "1",
     "name": "Bangkok star",
     "calories": 669,
     "speed": 10.8,
     "image": "/images/map-2.svg"
   },
   {
-    "name": "NEAR",
+    "id": "2",
+    "name": "CHILIZ",
     "calories": 608,
     "speed": 10,
     "image": "/images/map-3.svg"

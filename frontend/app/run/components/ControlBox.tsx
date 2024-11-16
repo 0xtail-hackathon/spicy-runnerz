@@ -8,14 +8,18 @@ interface ControlBoxProps {
 }
 
 const ControlBox: React.FC<ControlBoxProps> = ({ status, runningTime }) => {
-  let buttonIcon = "/icons/play.svg";
+  const playIcon = "/icons/play.svg";
+  const pauseIcon = "/icons/pause.svg";
+  const endIcon = "/icons/end.svg";
+
+  let buttonIcon = playIcon;
   let buttonText = "START";
 
   if (status === "running" || status === "pause") {
-    buttonIcon = "/icons/pause.svg";
+    buttonIcon = pauseIcon;
     buttonText = runningTime;
   } else if (status === "end") {
-    buttonIcon = "/icons/end.svg";
+    buttonIcon = endIcon;
     buttonText = "END";
   }
 
