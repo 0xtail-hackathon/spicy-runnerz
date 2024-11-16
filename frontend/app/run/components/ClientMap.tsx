@@ -26,7 +26,12 @@ const ClientMap: React.FC = () => {
     }
   }, []);
 
-  if (!isLoaded || !userLocation) return <Loading width={50} height={50} />;
+  if (!isLoaded || !userLocation)
+    return (
+      <div className="relative w-full h-full">
+        <Loading width={50} height={50} />
+      </div>
+    );
 
   return (
     <div

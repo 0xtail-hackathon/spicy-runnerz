@@ -16,7 +16,7 @@ export default function RunLayout({
   const routeName = dummyData.route.name;
 
   return (
-    <div className="flex flex-col items-center justify-between min-h-screen bg-gray-50 h-full">
+    <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100">
       <RunHeader routeName={routeName} />
       {children}
       <Footer />
