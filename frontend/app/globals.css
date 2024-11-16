@@ -5,6 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --header-height: 100px;
+  --footer-height: 80px;
 }
 
 @media (prefers-color-scheme: dark) {

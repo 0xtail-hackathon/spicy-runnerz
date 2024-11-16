@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@/public/icons/profile.svg"; // Update this path to where your logo is stored
+import logo from "@/public/icons/menu-4.svg"; // Update this path to where your logo is stored
 
 const Loading = ({
   width = 50,
