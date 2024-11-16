@@ -29,7 +29,10 @@ const HomeScreen: React.FC = () => {
             {recommendations.map((recommendation, index) => (
               <Link
                 key={index}
-                href={`/run/${encodeURIComponent(recommendation.name)}`}
+                href={{
+                  pathname: `/run/${encodeURIComponent(recommendation.id)}`,
+                  query: { from: "join" },
+                }}
                 passHref
               >
                 <div className="flex items-center justify-between cursor-pointer hover:bg-gray-50 p-2 rounded-md">

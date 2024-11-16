@@ -1,10 +1,17 @@
+"use client";
+
 import React from "react";
-import ControlBox from "./components/ControlBox";
-import ClientMap from "./components/ClientMap";
-import GetRunzButton from "../components/GetRunzButton";
+import { useParams, useSearchParams } from "next/navigation";
+import ControlBox from "../components/ControlBox";
+import ClientMap from "../components/ClientMap";
+import GetRunzButton from "../../components/GetRunzButton";
 
 const RunScreen = () => {
-  const from: "join" | "create" = "join";
+  const params = useParams();
+  const searchParams = useSearchParams();
+  const id = params.id;
+  const from = searchParams.get("from") || "create";
+
   const status: "ready" | "running" | "pause" | "end" = "end";
 
   return (
