@@ -15,20 +15,6 @@ const RunCreateScreen: React.FC = () => {
 
     try {
       console.log("Submitted");
-      // const response = await fetch("/api/createRun", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({ runName }),
-      // });
-      //
-      // if (response.ok) {
-      //   console.log("Run Name Submitted: ", runName);
-      //   setRunName(""); // Clear the input on success
-      // } else {
-      //   console.error("Failed to create run");
-      // }
     } catch (error) {
       console.error("Error submitting run name: ", error);
     }
