@@ -3,17 +3,38 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { baseUrl } from "@/constants";
+import { useUserWallets } from "@dynamic-labs/sdk-react-core";
 
 const ShareRunScreen: React.FC = () => {
+  const userWallets = useUserWallets();
   const router = useRouter();
   // Placeholder data to be replaced with actual run data from the server
   const runImageUrl = "/images/map-example.svg";
   const tokenIconUrl = "/icons/token-color.svg";
   const twitterIconUrl = "/icons/twitter.svg";
   const telegramIconUrl = "/icons/telegram.svg";
-  const discordIconUrl = "/icons/discord.svg";
 
-  const handleNextClick = async () => {
+  const handleWellDoneClick = async () => {
+    // TODO:
+    const createRouteResponse = await fetch(`${baseUrl}/create-route`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        routeId: distance,
+        runnerAddress: userWallets[0].address,
+      }),
+    });
+
+    if (!createRouteResponse.ok) {
+      throw new Error("Failed to create route");
+    }
+
+    const createRouteData = await createRouteResponse.json();
+    console.log("Route created:", createRouteData);
+
     router.push("/joined");
   };
 
@@ -27,7 +48,7 @@ const ShareRunScreen: React.FC = () => {
         className="mb-10"
       />
       <button
-        onClick={handleNextClick}
+        onClick={handleWellDoneClick}
         className="bg-primary-1000 w-full max-w-lg py-3 rounded-3xl font-bold mb-10"
       >
         <p className="text-white text-xl">Well Done!</p>

@@ -44,21 +44,10 @@ const RunScreen = () => {
         } else if (status === "running") {
             setStatus("end");
         }
-    };
-
-    return (
-        <div className="relative w-full min-h-full flex flex-col items-center justify-start">
-            <ClientMap />
-            {from === "join" && status === "end" && (
-                <GetRunzButton className="top-40" link="../share" />
-            )}
-            <ControlBox
-                status={status}
-                runningTime={status === "running" || status === "pause" ? formatTime(runningTime) : "00:00"}
-                onButtonClick={handleButtonClick} // 핸들러 전달
-            />
-        </div>
-    );
+        onButtonClick={handleButtonClick} // 핸들러 전달
+      />
+    </div>
+  );
 };
 
 export default RunScreen;
