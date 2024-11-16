@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 
 const StakeRunzScreen: React.FC = () => {
   const router = useRouter();
+  const tokenImageUrl = "/icons/token-color.svg";
+
   // TODO: get from server
   const stakeAmount = "10.002";
   const availableRunz = 4329.34;
@@ -26,12 +28,7 @@ const StakeRunzScreen: React.FC = () => {
         </p>
         <h3 className="text-lg font-bold text-gray-800 mb-2">Assets</h3>
         <div className="flex items-center p-3 border rounded-lg mb-4">
-          <Image
-            src="/icons/token-color.svg"
-            alt="Token"
-            width={40}
-            height={40}
-          />
+          <Image src={tokenImageUrl} alt="Token" width={40} height={40} />
           <p className="text-gray-800 font-semibold ml-5">RUNZ</p>
           <span className="ml-auto">
             <svg

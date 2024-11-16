@@ -7,29 +7,34 @@ import { useRouter } from "next/navigation";
 const CompletedRunScreen: React.FC = () => {
   const router = useRouter();
   // Placeholder data to be replaced with actual run data from the server
-  const runImageUrl = "/images/sample-map.png";
+  const runImageUrl = "/images/map-example.svg";
   const accountProfileImageUrl = "icons/account-profile.svg";
-  const walletAddress = "Au...Ux";
+  const copyImageUrl = "icons/copy.svg";
+  const walletAddress = "0x1234567890abcdef1234567890abcdef12345678";
 
-  const handleAccountClick = async () => {
-    // TODO: staking
-    router.push("/profile");
+  const formatWalletAddress = (address: string) => {
+    return `${address.slice(0, 6)}...${address.slice(-4)}`;
   };
 
   const handleWellDoneClick = async () => {
     router.push("/");
   };
 
+  const handleCopyAddress = () => {
+    navigator.clipboard.writeText(walletAddress);
+    alert("Wallet address copied to clipboard!");
+  };
+
   return (
-    <div className="flex-grow w-full flex flex-col items-center justify-start px-5 pt-20">
+    <div className="flex-grow w-full flex flex-col items-center justify-start px-5">
       <Image
         src={runImageUrl}
         alt="Run Map"
-        width={200}
-        height={200}
+        width={320}
+        height={320}
         className="mb-5"
       />
-      <div className="flex items-center p-3 border rounded-lg mb-10 w-full max-w-sm">
+      <div className="flex w-80 items-center p-3 border bg-gray-50 rounded-lg mb-10 max-w-sm">
         <Image
           src={accountProfileImageUrl}
           alt="Wallet Icon"
@@ -38,24 +43,18 @@ const CompletedRunScreen: React.FC = () => {
         />
         <div className="ml-5">
           <p className="text-gray-800 font-semibold">RUNNZ Creator Wallet</p>
-          <p className="text-gray-500">{walletAddress}</p>
+          <p className="text-gray-500 flex items-center">
+            {formatWalletAddress(walletAddress)}
+            <button onClick={handleCopyAddress} className="ml-2">
+              <Image
+                src={copyImageUrl}
+                alt="Copy Icon"
+                width={20}
+                height={20}
+              />
+            </button>
+          </p>
         </div>
-        <button onClick={handleAccountClick} className="ml-auto">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            className="w-6 h-6 text-gray-500"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M16.5 4.5l-9 9m9 0V4.5h-9"
-            />
-          </svg>
-        </button>
       </div>
       <button
         onClick={handleWellDoneClick}
