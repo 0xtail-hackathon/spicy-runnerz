@@ -17,7 +17,7 @@ export default function Home() {
             </header>
 
             {/* Main Section */}
-            <main className="flex flex-col items-center justify-center flex-grow">
+            <main className="flex flex-col items-center justify-center">
                 {/* Runner Image */}
                 <div
                     className="w-24 h-24 rounded-full flex items-center justify-center mb-8"
@@ -45,7 +45,7 @@ export default function Home() {
             </main>
 
             {/* Footer Section */}
-            <footer className="flex flex-col items-center mt-10 w-full">
+            <footer className="mt-64 flex flex-col items-center mt-10 w-full">
                 <div className="border rounded-lg p-4 flex flex-col items-center w-full max-w-md">
                     <span className="text-xs font-light text-gray-600 mb-2">
                         Powered by
