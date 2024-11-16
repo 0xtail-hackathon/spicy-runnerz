@@ -78,22 +78,22 @@ const StakeRunzScreen: React.FC = () => {
       // console.log("Approve successful");
 
       // Step 2: Create Route API 호출
-      const createRouteResponse = await fetch(`${baseUrl}/create-route`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          distance: distance,
-          creatorAddress: walletAddress,
-        }),
-      });
-
-      if (!createRouteResponse.ok) {
-        throw new Error("Failed to create route");
-      }
-
-      const createRouteData = await createRouteResponse.json();
+      // const createRouteResponse = await fetch(`${baseUrl}/create-route`, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     distance: distance,
+      //     creatorAddress: walletAddress,
+      //   }),
+      // });
+      //
+      // if (!createRouteResponse.ok) {
+      //   throw new Error("Failed to create route");
+      // }
+      //
+      // const createRouteData = await createRouteResponse.json();
       console.log("Route created:", createRouteData);
 
       // 생성 성공 후 다른 페이지로 이동
