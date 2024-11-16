@@ -1,20 +1,25 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef } from "react";
+import useRunStore from "@/app/store/useRunStore";
+import { useRouter } from "next/navigation";
 
 const RunCreateScreen: React.FC = () => {
-  const [runName, setRunName] = useState<string>("");
+  const router = useRouter();
+  const { setRunName } = useRunStore();
   const maxChars = 24;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setRunName(e.target.value);
-  };
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Prevent default form submission behavior
-
+    e.preventDefault();
     try {
-      console.log("Submitted");
+      if (inputRef.current) {
+        const enteredName = inputRef.current.value;
+        setRunName(enteredName);
+        console.log("Submitted: ", enteredName);
+        router.push("/stake");
+      }
     } catch (error) {
       console.error("Error submitting run name: ", error);
     }
@@ -23,7 +28,7 @@ const RunCreateScreen: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative min-h-96 h-full flex flex-col items-stretch justify-between mt-10  w-11/12 md:w-8/12 lg:w-1/2"
+      className="relative min-h-96 h-full flex flex-col items-stretch justify-between mt-10 w-11/12 md:w-8/12 lg:w-1/2"
     >
       <div className="w-full flex flex-col items-center gap-3">
         <label htmlFor="runName" className="text-gray-600 w-full">
@@ -33,15 +38,14 @@ const RunCreateScreen: React.FC = () => {
           <input
             id="runName"
             type="text"
-            value={runName}
-            onChange={handleChange}
+            ref={inputRef}
             placeholder="Enter the name of your RUN"
             maxLength={maxChars}
-            pattern="[A-Za-z0-9 _-]{1,24}" // Allow English letters, numbers, spaces, hyphens, and underscores
+            // pattern="[A-Za-z0-9 _-]{1,24}"
             className="p-4 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-primary-1000"
           />
           <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500">
-            {runName.length} / {maxChars}
+            {inputRef.current?.value.length || 0} / {maxChars}
           </div>
         </div>
       </div>

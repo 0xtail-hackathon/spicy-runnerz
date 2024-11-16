@@ -7,19 +7,19 @@ import ERC20Balance from "./components/ERC20Balance";
 // import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 
 const WalletPage: React.FC = () => {
-    // const { user } = useDynamicContext();
-    const [balance, setBalance] = useState<string>("0"); // balance 상태 추가
+  // const { user } = useDynamicContext();
+  const [balance, setBalance] = useState<string>("0"); // balance 상태 추가
 
-    const handleBalanceUpdate = (newBalance: string) => {
-        setBalance(newBalance); // ERC20Balance로부터 잔액 업데이트
-    };
+  const handleBalanceUpdate = (newBalance: string) => {
+    setBalance(newBalance); // ERC20Balance로부터 잔액 업데이트
+  };
 
-    return (
-        <div>
-            <ERC20Balance onBalanceUpdate={handleBalanceUpdate}/>
-            <WalletDashboard balance={balance}/>
-        </div>
-    );
+  return (
+    <div>
+      <ERC20Balance onBalanceUpdate={handleBalanceUpdate} />
+      <WalletDashboard balance={balance} />
+    </div>
+  );
 };
 
 export default WalletPage;
