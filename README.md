@@ -76,3 +76,17 @@ spicy-runnerz/
 ```bash
 git clone https://github.com/0xtail-hackathon/spicy-runnerz.git
 cd spicy-runnerz
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the Development Server
+
+```bash
+npm run dev
+```
+
