@@ -60,14 +60,22 @@ spicy-runnerz/
 
 ---
 ## 🏗️ Development Roadmap
-- Real-time art generation during running.
-- NFT integration to store and trade running results.
-- Global leaderboards and community events.
 - Verification System:
 	- Capture runner’s location coordinates every 10 meters during the run.
 	- Compare captured coordinates against the original route’s coordinates.
 	- Validate the run if at least 90% of the paths match the original route.
 	- Store the validation result as proof of completion.
+- Ad Runs:
+    - Allow businesses to create custom RUNs as advertising campaigns.
+    - Businesses send a pool of tokens to RUNNERZ for airdrops.
+    - Users complete runs shaped like business logos to earn tokens.
+    - Example: Running the shape of the ETH logo around a convention area.
+- Shop Feature:
+    - Enable users to spend earned tokens on digital or physical goods.
+    - Support for exclusive in-app items.
+- Timeline Feature:
+    - Allow users to view and share their running history as a timeline.
+    - Display completed art, statistics, and rewards in a visual format.
 
 ---
 ## 📦 Installation & Setup
