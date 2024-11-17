@@ -12,28 +12,31 @@ const ShareRunScreen: React.FC = () => {
   // Placeholder data to be replaced with actual run data from the server
   const runImageUrl = "/images/map-example.svg";
   const tokenIconUrl = "/icons/token-color.svg";
+  const discordIconUrl = "/icons/discord.svg";
   const twitterIconUrl = "/icons/twitter.svg";
   const telegramIconUrl = "/icons/telegram.svg";
 
   const handleWellDoneClick = async () => {
     // TODO:
-    const createRouteResponse = await fetch(`${baseUrl}/create-route`, {
+    const routeId = "15";
+
+    const completeRouteResponse = await fetch(`${baseUrl}/complete-route`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        routeId: distance,
+        routeId: routeId,
         runnerAddress: userWallets[0].address,
       }),
     });
 
-    if (!createRouteResponse.ok) {
-      throw new Error("Failed to create route");
+    if (!completeRouteResponse.ok) {
+      throw new Error("Failed to complete route");
     }
 
-    const createRouteData = await createRouteResponse.json();
-    console.log("Route created:", createRouteData);
+    const completeRouteData = await completeRouteResponse.json();
+    console.log("Route completed:", completeRouteData);
 
     router.push("/joined");
   };
