@@ -14,10 +14,9 @@ const ArtRunModule = buildModule("ArtRunModule", (m) => {
     // ArtRun 컨트랙트 배포 (필요한 경우 RUNZToken 주소를 생성자에 전달할 수 있음)
     const artRun = m.contract("ArtRun", [], );
 
+    const runEconomy = m.contract("RunEconomy", ["0x17a2d13314786cE819590ba31B98AAcc0932EFfB"], );
 
-    const runEconomy2 = m.contract("RunEconomy2", ["0x17a2d13314786cE819590ba31B98AAcc0932EFfB"], );
-
-    return { runzToken, artRun, runEconomy2 };
+    return { runzToken, artRun, runEconomy };
 });
 
 export default ArtRunModule;

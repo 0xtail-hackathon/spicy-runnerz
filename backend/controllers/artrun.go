@@ -6,6 +6,7 @@ import (
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/gin-gonic/gin"
 	"math/big"
 	"net/http"
@@ -21,6 +22,7 @@ var (
 // 이더리움 클라이언트 설정
 var contract *models.ArtRun
 var auth *bind.TransactOpts
+var ethClient *ethclient.Client
 
 func init() {
 	privateKey, err := crypto.HexToECDSA(privateKeyHex)
@@ -36,6 +38,11 @@ func init() {
 	contract, err = models.NewArtRun(common.HexToAddress(models.ArtRunContractAddress), chainURl)
 	if err != nil {
 		panic("Create contract failed")
+	}
+
+	ethClient, err = ethclient.Dial(chainURl)
+	if err != nil {
+		panic("Failed to connect to RPC")
 	}
 }
 
