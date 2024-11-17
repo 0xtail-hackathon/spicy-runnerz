@@ -1,8 +1,5 @@
 # Spicy Runnerz
 
-[![License](https://img.shields.io/github/license/0xtail-hackathon/spicy-runnerz)](https://github.com/0xtail-hackathon/spicy-runnerz/blob/main/LICENSE)
-[![Build](https://img.shields.io/github/actions/workflow/status/0xtail-hackathon/spicy-runnerz/build.yml)](https://github.com/0xtail-hackathon/spicy-runnerz/actions)
-
 > **Spicy Runnerz** is a platform that combines movement and art, enabling users to create and share "Run Art" by running. Users can earn rewards for completing and sharing courses, powered by blockchain technology.
 
 ---
