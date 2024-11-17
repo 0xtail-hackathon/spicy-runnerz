@@ -18,7 +18,7 @@ const RunCreateScreen: React.FC = () => {
         const enteredName = inputRef.current.value;
         setRunName(enteredName);
         console.log("Submitted: ", enteredName);
-        router.push("/stake");
+        router.push("/run/0");
       }
     } catch (error) {
       console.error("Error submitting run name: ", error);

@@ -3,37 +3,37 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { baseUrl } from "@/constants";
-import { useUserWallets } from "@dynamic-labs/sdk-react-core";
+// import { useUserWallets } from "@dynamic-labs/sdk-react-core";
 
 const ShareRunScreen: React.FC = () => {
-  const userWallets = useUserWallets();
+  // const userWallets = useUserWallets();
   const router = useRouter();
   // Placeholder data to be replaced with actual run data from the server
   const runImageUrl = "/images/map-example.svg";
   const tokenIconUrl = "/icons/token-color.svg";
+  const discordIconUrl = "/icons/discord.svg";
   const twitterIconUrl = "/icons/twitter.svg";
   const telegramIconUrl = "/icons/telegram.svg";
 
   const handleWellDoneClick = async () => {
     // TODO:
-    const createRouteResponse = await fetch(`${baseUrl}/create-route`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        routeId: distance,
-        runnerAddress: userWallets[0].address,
-      }),
-    });
-
-    if (!createRouteResponse.ok) {
-      throw new Error("Failed to create route");
-    }
-
-    const createRouteData = await createRouteResponse.json();
-    console.log("Route created:", createRouteData);
+    // const createRouteResponse = await fetch(`${baseUrl}/create-route`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     routeId: "2",
+    //     runnerAddress: userWallets[0].address,
+    //   }),
+    // });
+    //
+    // if (!createRouteResponse.ok) {
+    //   throw new Error("Failed to create route");
+    // }
+    //
+    // const createRouteData = await createRouteResponse.json();
+    // console.log("Route created:", createRouteData);
 
     router.push("/joined");
   };

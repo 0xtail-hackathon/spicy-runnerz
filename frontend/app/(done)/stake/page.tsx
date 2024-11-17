@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useUserWallets } from "@dynamic-labs/sdk-react-core";
 import { Contract, ethers, formatUnits } from "ethers";
-import { baseUrl } from "@/constants";
 
 const StakeRunzScreen: React.FC = () => {
   const [availableRunz, setAvailableRunz] = useState<string>("0"); // 초기값 설정
@@ -51,11 +50,10 @@ const StakeRunzScreen: React.FC = () => {
 
   const stakeAmount = "10.002";
   const gasFees = 0.003;
-  const distance = "5";
 
   const handleStakeClick = async () => {
     if (!userWallets.length) return;
-    const walletAddress = userWallets[0].address;
+    // const walletAddress = userWallets[0].address;
 
     try {
       // Step 1: Approve API 호출
@@ -94,7 +92,7 @@ const StakeRunzScreen: React.FC = () => {
       // }
       //
       // const createRouteData = await createRouteResponse.json();
-      console.log("Route created:", createRouteData);
+      // console.log("Route created:", createRouteData);
 
       // 생성 성공 후 다른 페이지로 이동
       router.push("/created");

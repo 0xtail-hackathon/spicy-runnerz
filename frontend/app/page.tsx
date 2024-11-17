@@ -16,7 +16,7 @@ interface Recommendation {
 
 const HomeScreen: React.FC = () => {
   const recommendations: Recommendation[] = dummyData;
-  const joined: boolean = true;
+  const joined: boolean = false;
 
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100">
